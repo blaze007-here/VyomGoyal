@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <!-- Character Encoding & Viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Primary Meta Tags -->
+  <title>Vyom Goyal | Android & Mobile Application Developer</title>
+  <meta name="title" content="Vyom Goyal | Android & Mobile Application Developer" />
+  <meta name="description" content="Portfolio of Vyom Goyal — Android Application Developer, BCA student, and App Development Mentor at ACE. Building high-performance mobile apps with Kotlin, Jetpack Compose, Material 3, and Clean Architecture." />
+  <meta name="keywords" content="Vyom Goyal, Android Developer, Kotlin, Jetpack Compose, App Development Mentor ACE, Mobile Engineer, Flutter, Supabase, Android Studio, BCA Developer" />
+  <meta name="author" content="Vyom Goyal" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vyomgoyal.vercel.app/" />
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vyomgoyal.vercel.app/" />
+  <meta property="og:title" content="Vyom Goyal | Android & Mobile Application Developer" />
+  <meta property="og:description" content="Explore native Android applications, clean architecture designs, and mobile solutions engineered by Vyom Goyal." />
+  <meta property="og:image" content="https://vyomgoyal.vercel.app/me3.jpg" />
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://vyomgoyal.vercel.app/" />
+  <meta property="twitter:title" content="Vyom Goyal | Android & Mobile Application Developer" />
+  <meta property="twitter:description" content="Building high-performance native Android apps using Kotlin, Compose, and scalable architecture." />
+  <meta property="twitter:image" content="https://vyomgoyal.vercel.app/me3.jpg" />
+
+  <!-- Theme Color for Mobile Browsers -->
+  <meta name="theme-color" content="#090d16" />
+
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            android: {
+              DEFAULT: '#3DDC84',
+              hover: '#32b86e',
+              muted: 'rgba(61, 220, 132, 0.12)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Structured JSON-LD Schema (Google Rich Results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vyom Goyal",
+    "url": "https://vyomgoyal.vercel.app/",
+    "image": "https://vyomgoyal.vercel.app/me3.jpg",
+    "jobTitle": "Android & Mobile Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "ACE Society"
+    },
+    "description": "App Development Mentor at ACE and BCA student crafting native Android and multiplatform mobile applications.",
+    "sameAs": [
+      "https://github.com/blaze007-here",
+      "https://www.linkedin.com/in/vyom-goyal-879409320/"
+    ],
+    "knowsAbout": [
+      "Android Development",
+      "Kotlin",
+      "Jetpack Compose",
+      "Material Design 3",
+      "MVVM Architecture",
+      "Coroutines & StateFlow",
+      "Flutter",
+      "Supabase",
+      "Firebase"
+    ]
+  }
+  </script>
+
+  <style>
+    /* Subtle background grid pattern */
+    .bg-grid {
+      background-size: 36px 36px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+
+<body class="bg-[#07090e] text-slate-100 font-sans antialiased selection:bg-android selection:text-black min-h-screen bg-grid">
+
+  <!-- Header & Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#07090e]/85 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-android font-mono text-sm font-bold group-hover:scale-105 transition-transform">
+          VG
+        </div>
+        <span class="font-bold text-slate-100 tracking-tight text-lg">
+          Vyom<span class="text-android">.dev</span>
+        </span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-android transition-colors">About</a>
+        <a href="#skills" class="hover:text-android transition-colors">Architecture & Stack</a>
+        <a href="#projects" class="hover:text-android transition-colors">Projects</a>
+        <a href="#leadership" class="hover:text-android transition-colors">Mentorship</a>
+        <a href="#contact" class="px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-android hover:bg-emerald-500/20 transition-all font-semibold">
+          Get in Touch
+        </a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-toggle" aria-label="Toggle navigation menu" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-[#0b0e17] px-6 py-4 space-y-3">
+      <a href="#about" class="block text-slate-300 hover:text-android mobile-link">About</a>
+      <a href="#skills" class="block text-slate-300 hover:text-android mobile-link">Architecture & Stack</a>
+      <a href="#projects" class="block text-slate-300 hover:text-android mobile-link">Projects</a>
+      <a href="#leadership" class="block text-slate-300 hover:text-android mobile-link">Mentorship</a>
+      <a href="#contact" class="block text-android font-semibold mobile-link">Contact</a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 pt-24">
+
+    <!-- Hero Section -->
+    <section class="min-h-[85vh] flex items-center py-12">
+      <div class="grid lg:grid-cols-12 gap-12 items-center w-full">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Role Pill -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-android animate-pulse"></span>
+            Android Developer & App Mentor @ ACE
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Engineering robust <span class="bg-gradient-to-r from-android via-emerald-300 to-cyan-400 bg-clip-text text-transparent">native Android</span> experiences.
+          </h1>
+
+          <p class="text-lg text-slate-300 leading-relaxed max-w-xl">
+            Hi, I’m <strong>Vyom Goyal</strong>. I build production-grade mobile applications with <strong>Kotlin, Jetpack Compose, and Clean Architecture</strong>. Focused on fluid UI, reactive state pipelines, and performant backend services.
+          </p>
+
+          <!-- Action CTA Group -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-android text-slate-950 font-bold hover:bg-android-hover transition-all shadow-lg shadow-emerald-500/20">
+              View Mobile Apps
+            </a>
+            <a href="https://github.com/blaze007-here" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-slate-200 font-semibold transition-all flex items-center gap-2">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub Profile
+            </a>
+          </div>
+
+          <!-- Quick Stats / Highlights -->
+          <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-800/80 max-w-lg">
+            <div>
+              <p class="text-2xl font-bold text-white font-mono">100%</p>
+              <p class="text-xs text-slate-400">Kotlin & Compose</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-white font-mono">Mentor</p>
+              <p class="text-xs text-slate-400">ACE App Domain</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-white font-mono">MVVM</p>
+              <p class="text-xs text-slate-400">Clean Architecture</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Card / Profile Mockup -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-72 sm:w-80 p-2 rounded-3xl bg-gradient-to-b from-emerald-500/20 via-slate-800/40 to-slate-900 border border-slate-700/60 shadow-2xl">
+            <!-- Simulated Android Phone Frame -->
+            <div class="bg-slate-950 rounded-[22px] overflow-hidden border border-slate-800 flex flex-col items-center p-6 text-center">
+              
+              <!-- Avatar with Error Fallback -->
+              <div class="relative w-36 h-36 mb-4 rounded-2xl overflow-hidden border-2 border-emerald-500/30 bg-slate-800 flex items-center justify-center">
+                <img 
+                  src="/me3.jpg" 
+                  alt="Vyom Goyal" 
+                  class="w-full h-full object-cover" 
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                />
+                <!-- Fallback Initial Avatar -->
+                <div class="hidden w-full h-full bg-slate-800 text-android font-bold text-4xl items-center justify-center">
+                  VG
+                </div>
+              </div>
+
+              <h2 class="text-xl font-bold text-white">Vyom Goyal</h2>
+              <p class="text-sm text-android font-medium mb-3">Android Engineer • BCA</p>
+              
+              <div class="w-full space-y-2 text-xs text-left bg-slate-900/80 p-3.5 rounded-xl border border-slate-800/90 font-mono">
+                <div class="flex justify-between text-slate-400">
+                  <span>Stack:</span>
+                  <span class="text-slate-200">Kotlin / Compose</span>
+                </div>
+                <div class="flex justify-between text-slate-400">
+                  <span>Pattern:</span>
+                  <span class="text-slate-200">MVVM + StateFlow</span>
+                </div>
+                <div class="flex justify-between text-slate-400">
+                  <span>Cloud:</span>
+                  <span class="text-slate-200">Supabase & Firebase</span>
+                </div>
+              </div>
+
+              <a href="https://www.linkedin.com/in/vyom-goyal-879409320/" target="_blank" rel="noopener noreferrer" class="mt-4 w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-200 transition-all flex items-center justify-center gap-2">
+                Connect on LinkedIn →
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 border-t border-slate-800/80">
+      <div class="grid md:grid-cols-12 gap-8 items-start">
+        <div class="md:col-span-4">
+          <p class="text-android font-mono text-sm font-semibold uppercase tracking-wider mb-2">// Background</p>
+          <h2 class="text-3xl font-extrabold text-white">About Me</h2>
+        </div>
+        <div class="md:col-span-8 space-y-4 text-slate-300 leading-relaxed text-base">
+          <p>
+            I am a Computer Applications (BCA) student with a dedicated focus on <strong>modern mobile systems</strong>. My journey started with core Java and algorithmic problem solving, which evolved into architecting scalable, reactive Android apps using <strong>Kotlin and Jetpack Compose</strong>.
+          </p>
+          <p>
+            Beyond mobile development, I engineer web PWAs using React and explore multi-agent AI workflows. I believe good apps aren't just visually clean—they must have resilient offline capabilities, deterministic state machines, and lean memory profiles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture & Tech Stack -->
+    <section id="skills" class="py-20 border-t border-slate-800/80">
+      <div class="mb-12">
+        <p class="text-android font-mono text-sm font-semibold uppercase tracking-wider mb-2">// Competencies</p>
+        <h2 class="text-3xl font-extrabold text-white">Architecture & Tech Stack</h2>
+        <p class="text-slate-400 mt-2 max-w-xl">Every layer in my development lifecycle—from native layout rendering to remote database syncing.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Category 1: Android Core -->
+        <div class="p-6 rounded-2xl bg-[#0d111c] border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-android flex items-center justify-center font-mono font-bold text-lg">
+            📱
+          </div>
+          <h3 class="text-lg font-bold text-white">Native Android</h3>
+          <p class="text-xs text-slate-400">First-class mobile UI, system APIs, and lifecycles.</p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">Kotlin</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">Jetpack Compose</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">Material Design 3</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">Java & XML</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">Android Studio</span>
+          </div>
+        </div>
+
+        <!-- Category 2: App Architecture -->
+        <div class="p-6 rounded-2xl bg-[#0d111c] border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono font-bold text-lg">
+            🏗️
+          </div>
+          <h3 class="text-lg font-bold text-white">Architecture & State</h3>
+          <p class="text-xs text-slate-400">Decoupled, testable patterns for deterministic behavior.</p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">MVVM</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">Kotlin Coroutines</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">StateFlow & SharedFlow</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">Clean Architecture</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">Navigation Compose</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Cloud & Multiplatform -->
+        <div class="p-6 rounded-2xl bg-[#0d111c] border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-mono font-bold text-lg">
+            ☁️
+          </div>
+          <h3 class="text-lg font-bold text-white">Backend & Cross-Platform</h3>
+          <p class="text-xs text-slate-400">Full-stack pipelines, databases, and multiplatform frameworks.</p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">Supabase</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">Firebase Auth/Store</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">Flutter & Dart</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">REST APIs & Retrofit</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-200">PostgreSQL / MySQL</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects Section with Filter Tabs -->
+    <section id="projects" class="py-20 border-t border-slate-800/80">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <p class="text-android font-mono text-sm font-semibold uppercase tracking-wider mb-2">// Portfolio</p>
+          <h2 class="text-3xl font-extrabold text-white">Featured Applications</h2>
+          <p class="text-slate-400 mt-2">Real-world applications built for performance, scale, and clean user experience.</p>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="flex items-center gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800">
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/20 text-android transition-all" data-filter="all">All</button>
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all" data-filter="android">Android</button>
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all" data-filter="cross">Web / Cross</button>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <!-- Project 1: Omni AI -->
+        <div class="project-card group p-6 rounded-2xl bg-[#0d111c] border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between" data-category="android">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-emerald-950/70 border border-emerald-500/30 text-emerald-400">Kotlin & Supabase</span>
+              <span class="text-xs text-slate-500 font-mono">Mobile AI</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-android transition-colors mb-2">Omni AI</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              All-in-one native AI productivity workspace. Connects Kotlin clients to Supabase backend architecture with streaming inference responses, persistent conversation states, and responsive Compose UI.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">Kotlin</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">Supabase</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">Coroutines</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">MVVM</span>
+            </div>
+          </div>
+          <a href="https://github.com/blaze007-here/OmniAi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-android hover:underline pt-2">
+            View Source Code →
+          </a>
+        </div>
+
+        <!-- Project 2: Appception -->
+        <div class="project-card group p-6 rounded-2xl bg-[#0d111c] border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between" data-category="android">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-emerald-950/70 border border-emerald-500/30 text-emerald-400">Jetpack Compose</span>
+              <span class="text-xs text-slate-500 font-mono">Showcase App</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-android transition-colors mb-2">Appception</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Interactive demonstration Android application built for the BCA induction event. Designed to teach incoming students core Android capabilities through live interactive Compose animations and reactive UI components.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">Jetpack Compose</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">Material 3</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">NavCompose</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">Live Demos</span>
+            </div>
+          </div>
+          <a href="https://github.com/blaze007-here" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-android hover:underline pt-2">
+            View on GitHub →
+          </a>
+        </div>
+
+        <!-- Project 3: LeetCode Tracker -->
+        <div class="project-card group p-6 rounded-2xl bg-[#0d111c] border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between" data-category="android">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-emerald-950/70 border border-emerald-500/30 text-emerald-400">Android & Analytics</span>
+              <span class="text-xs text-slate-500 font-mono">Productivity</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-android transition-colors mb-2">LeetCode Tracker</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Native Android analytics app allowing competitive programmers to monitor submission streaks, topic breakdowns, and difficulty completion rates with clean data visualization.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">Kotlin</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">Analytics UI</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">State Management</span>
+            </div>
+          </div>
+          <a href="https://github.com/blaze007-here/LcTrackerAPP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-android hover:underline pt-2">
+            View Source Code →
+          </a>
+        </div>
+
+        <!-- Project 4: InventoryFlow -->
+        <div class="project-card group p-6 rounded-2xl bg-[#0d111c] border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between" data-category="cross">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-cyan-950/70 border border-cyan-500/30 text-cyan-400">PWA & Camera SKU</span>
+              <span class="text-xs text-slate-500 font-mono">Mobile Web</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-android transition-colors mb-2">InventoryFlow</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Mobile-first Progressive Web Application engineered for live inventory tracking. Features optimistic user interface updates, live hardware camera SKU scanning, and offline resilience.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">React 19</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">TypeScript</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">Vite & PWA</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400">Camera API</span>
+            </div>
+          </div>
+          <a href="https://github.com/blaze007-here" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-android hover:underline pt-2">
+            View on GitHub →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mentorship & Leadership Section -->
+    <section id="leadership" class="py-20 border-t border-slate-800/80">
+      <div class="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-[#0e1424] to-[#07090e] border border-slate-800 relative overflow-hidden">
+        <div class="max-w-2xl space-y-4">
+          <span class="text-xs font-mono font-semibold uppercase tracking-wider text-android">Leadership & Community</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">App Development Mentor @ ACE</h2>
+          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+            Guiding junior developers and BCA students through their Android journeys. I lead workshops covering Kotlin syntax, Compose mental models, Gradle setup, and navigating the transition from XML to modern declarative UI.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-3 text-xs text-slate-400 font-mono">
+            <span class="flex items-center gap-1.5">✓ Curriculum Roadmaps</span>
+            <span class="flex items-center gap-1.5">✓ Code Reviews & Best Practices</span>
+            <span class="flex items-center gap-1.5">✓ Hackathon Guidance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Connect -->
+    <section id="contact" class="py-24 border-t border-slate-800/80 mb-12">
+      <div class="max-w-3xl mx-auto text-center space-y-6">
+        <p class="text-android font-mono text-sm font-semibold uppercase tracking-wider">// Let's Talk</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Ready to build something impactful?</h2>
+        <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base">
+          Whether you have an internship opportunity, an Android engineering role, or a project collaboration in mind, my inbox is always open.
+        </p>
+
+        <!-- Email Box with Copy Button -->
+        <div class="inline-flex flex-col sm:flex-row items-center gap-3 p-2 bg-slate-900/90 border border-slate-800 rounded-2xl">
+          <span class="px-4 py-2 text-slate-200 font-mono text-sm" id="email-text">vyomgoyal07@gmail.com</span>
+          <button id="copy-btn" class="w-full sm:w-auto px-4 py-2 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-android text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5">
+            <span id="copy-label">Copy Email</span>
+          </button>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex justify-center items-center gap-6 pt-4">
+          <a href="https://github.com/blaze007-here" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+            GitHub
+          </a>
+          <span class="text-slate-700">•</span>
+          <a href="https://www.linkedin.com/in/vyom-goyal-879409320/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+            LinkedIn
+          </a>
+          <span class="text-slate-700">•</span>
+          <a href="mailto:vyomgoyal07@gmail.com" class="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+            Direct Mail
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/60 py-8 bg-[#05070a] text-center text-xs text-slate-500 font-mono">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Vyom Goyal. Built with responsive web standards & Vercel.</p>
+      <p class="text-slate-400">Android • Kotlin • Jetpack Compose</p>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts (Mobile Menu, Filters & Copy Tooltip) -->
+  <script>
+    // 1. Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // 2. Project Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Toggle active button styles
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-emerald-500/20', 'text-android');
+          b.classList.add('text-slate-400');
+        });
+        btn.classList.add('bg-emerald-500/20', 'text-android');
+        btn.classList.remove('text-slate-400');
+
+        const filter = btn.getAttribute('data-filter');
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 3. Copy Email to Clipboard
+    const copyBtn = document.getElementById('copy-btn');
+    const copyLabel = document.getElementById('copy-label');
+    copyBtn.addEventListener('click', () => {
+      const email = document.getElementById('email-text').innerText;
+      navigator.clipboard.writeText(email).then(() => {
+        copyLabel.innerText = 'Copied to Clipboard! ✓';
+        setTimeout(() => {
+          copyLabel.innerText = 'Copy Email';
+        }, 2500);
+      });
+    });
+  </script>
+</body>
+</html>

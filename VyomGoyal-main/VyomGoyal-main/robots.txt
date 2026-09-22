@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vyomgoyal.vercel.app/sitemap.xml
